@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { register } from "../services/firebase";
+import { signup } from "../services/firebase";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
@@ -10,12 +10,11 @@ function SignUp() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      await register(email, password);
-      alert("Account created successfully!");
-      navigate("/"); // Redirect to home page after sign-up
+      await signup(email, password);
+      navigate("/");
     } catch (error) {
       console.error("Sign-up error", error.message);
-      alert("Error signing up: " + error.message);
+      alert("Error signing up");
     }
   };
 
@@ -37,9 +36,7 @@ function SignUp() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" className="bg-red-600 w-full p-2 text-white">
-          Sign Up
-        </button>
+        <button type="submit" className="bg-red-600 w-full p-2 text-white">Sign Up</button>
       </form>
     </div>
   );

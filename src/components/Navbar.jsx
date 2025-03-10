@@ -21,21 +21,15 @@ function Navbar() {
         {user && <Link to="/watchlist" className="hover:text-gray-400 transition duration-300">Watchlist</Link>}
       </div>
       {user ? (
-        <button onClick={handleLogout} className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition duration-300">
-          Logout
-        </button>
+        <button onClick={handleLogout} className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition duration-300">Logout</button>
       ) : (
-        <div className="flex space-x-4">
-          <button onClick={() => navigate("/signin")} className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition duration-300">
-            Sign In
-          </button>
-          <button onClick={() => navigate("/signup")} className="bg-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300">
-            Sign Up
-          </button>
+        <div>
+          <button onClick={() => navigate("/signin")} className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition duration-300">Sign In</button>
+          <button onClick={() => navigate("/signup")} className="ml-4 bg-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-300">Sign Up</button>
         </div>
       )}
     </nav>
   );
 }
 
-export default Navbar;
+export default Navbar

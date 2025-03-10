@@ -41,8 +41,8 @@ function MovieDetails() {
   return (
     <div className="text-white p-8">
       {/* Movie Poster */}
-      <div className="relative h-[500px]">
-        <img src={`${IMAGE_BASE_URL}${movie.backdrop_path}`} alt={movie.title} className="w-full h-full object-cover brightness-75" />
+      <div className="relative w-full h-[70vh] overflow-hidden">
+      <img src={`${IMAGE_BASE_URL}${movie.backdrop_path}`} alt={movie.title} className="w-full h-full object-cover brightness-75" />
         <h1 className="absolute bottom-4 left-8 text-4xl font-bold">{movie.title}</h1>
       </div>
 
